@@ -1,4 +1,4 @@
-<h1>Encryption Tool README</h1>
+<h1>Encryption Tool</h1>
 <h2>Introduction</h2>
 <p>The Encryption Tool is a command-line utility designed to provide a secure and user-friendly solution for encrypting and decrypting data using the Fernet encryption algorithm. Whether you need to protect sensitive information or secure file transmission, this tool offers a streamlined way to ensure data security.</p>
 <h2>Technologies</h2>

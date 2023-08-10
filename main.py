@@ -39,6 +39,7 @@ if ans == 1 or ans == 3:
         # Save the key
         zip.zipping(key_zip_file, key, password)
         print("\033[91m\033[1mKey successfully saved.\033[0m")
+        funcs.restart_program()
     # If decrypting data from a file
     elif ans == 3:
         # Get the existing key to decrypt the data
@@ -58,6 +59,7 @@ if ans == 1 or ans == 3:
         saveFilePath = os.path.abspath(os.path.expanduser(saveFilePath))
         # Save everything to a file
         funcs.save(saveFilePath, decrypted_data)
+        funcs.restart_program()
 
 # If working with user input
 if ans == 2 or ans == 4:
@@ -86,6 +88,7 @@ if ans == 2 or ans == 4:
         # Save the key
         zip.zipping(key_zip_file, key, password)
         print("\033[91m\033[1mKey successfully saved.\033[0m")
+        funcs.restart_program()
 
     # If decrypting user input data
     elif ans == 4:
@@ -108,6 +111,7 @@ if ans == 2 or ans == 4:
         saveFilePath = os.path.abspath(os.path.expanduser(saveFilePath))
         # Save everything to a file
         funcs.save(saveFilePath, decrypted_data)
+        funcs.restart_program()
 
 if ans == 5:
     label.how_to_use()

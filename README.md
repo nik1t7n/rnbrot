@@ -11,13 +11,13 @@
 <h2>Launch</h2>
 <p>Follow these steps to launch and use the Encryption Tool:</p>
 <ol>
-  <li>Clone or download the project repository to your local machine.
-  <code>git clone https://github.com/Nik1t7n/rnbrot.git</code></li>
-  <li>Open a terminal and navigate to the project directory.
-  <code>cd path/to/project</code></li>
+  <li>Clone or download the project repository to your local machine.<br>
+    <code>git clone https://github.com/Nik1t7n/rnbrot.git</code></li>
+  <li>Open a terminal and navigate to the project directory.<br>
+    <code>cd path/to/project</code></li>
   <li>Install dependencies by running <code>pip install -r requirements.txt</code>.</li>
-  <li>Run the <code>main.py</code> script to launch the tool.
-  <code>python3 main.py</code></li>
+  <li>Run the <code>main.py</code> script to launch the tool.<br>
+    <code>python3 main.py</code></li>
   <li>Choose an action from the menu and provide the required input or file paths.</li>
   <li>Encrypted or decrypted data will be saved to the specified file path.</li>
 </ol>

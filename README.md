@@ -13,11 +13,11 @@
 <ol>
   <li>Clone or download the project repository to your local machine.<br>
     <code>git clone https://github.com/Nik1t7n/rnbrot.git</code></li>
-  <li>Open a terminal and navigate to the project directory.<br>
-    <code>cd path/to/project</code></li>
-  <li>Install dependencies by running<br> 
-    <code>pip install -r requirements.txt</code>.</li>
-  <li>Run the <code>main.py</code> script to launch the tool.<br>
+  <li>Open a terminal and navigate to the project directory.<br><br>
+    <code>cd path/to/project</code></li><br>
+  <li>Install dependencies by running<br><br>
+    <code>pip install -r requirements.txt</code>.</li><br>
+  <li>Run the <code>main.py</code> script to launch the tool.<br><br>
     <code>python3 main.py</code></li>
   <li>Choose an action from the menu and provide the required input or file paths.</li>
   <li>Encrypted or decrypted data will be saved to the specified file path.</li>

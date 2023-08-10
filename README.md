@@ -1,27 +1,25 @@
-*Project Name*: RnbRot Encryption Tool
+**Project Name**: RnbRot Encryption Tool
 
-Description:
+**Description**:
 The RnbRot Encryption Tool is a versatile command-line utility designed to provide a straightforward and secure solution for encrypting and decrypting data using the AES encryption algorithm. Whether you're safeguarding sensitive information or transmitting confidential files, this tool offers a user-friendly interface to fortify your data protection.
 
-Features:
-
+**Features**:
 Perform Fernet encryption and decryption to bolster data security.
 Choice between file-based and interactive input modes for encryption/decryption.
 Password-protected storage of encryption keys within zip archives.
 Engaging and interactive command-line interface enriched with menu options.
-Installation:
 
-Clone or download the project repository to your local machine.
-Open a terminal and navigate to the project directory.
-Install Dependencies:
-Before utilizing the tool, ensure you have the required dependencies installed by executing the following command:
+**Installation:**
+* Clone or download the project repository to your local machine.
+* Open a terminal and navigate to the project directory.
+* Install Dependencies:
+* Before utilizing the tool, ensure you have the required dependencies installed by executing the following command:
 
-pip install -r requirements.txt
+_pip install -r requirements.txt_
 
 This command will automatically install the necessary libraries.
 
-Usage:
-
+**Usage:**
 Launch the encryption tool by running the main.py script.
 Follow the on-screen menu to select your desired action.
 Input data or file paths as guided by the tool.

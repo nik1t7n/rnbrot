@@ -4,99 +4,109 @@ from cryptography.fernet import Fernet
 import zip
 import getpass
 import sys
+import os
 
 label.label()
 label.menu()
 
-ans = int(input("\033[91m\033[1mВведите номер выбранного действия:\033[0m "))
+ans = int(input("\033[91m\033[1mEnter the number of the selected action:\033[0m "))
 
-# если работаем с файлами
+# If working with files
 if ans == 1 or ans == 3:
-    filePath = input("\033[91m\033[1mВведите абсолютный путь до файла:\033[0m ")
-    # читаем файл
+    filePath = input("\033[91m\033[1mEnter the absolute path to the file:\033[0m ")
+    filePath = os.path.abspath(os.path.expanduser(filePath))
+    # Read the file
     data = funcs.file_read(filePath)
-    # если зашифровать данные с файла
+    # If encrypting data from a file
     if ans == 1:
-        # генерируем ключ шифрования
+        # Generate encryption key
         key = Fernet.generate_key()
-        # шифруем данные с помощью функции из файла функс
+        # Encrypt data using the function from the funcs file
         encrypted_data = funcs.encrypt(data, key)
-        # пользователь вводит путь до файла куда сохранит зашифрованные данные
+        # User inputs the path to the file to save encrypted data
         saveFilePath = input(
-            "\033[91m\033[1mВведите путь до файла для сохранения текста:\033[0m "
+            "\033[91m\033[1mEnter the path to the file to save the text:\033[0m "
         )
-        # сохраняем данные файл функцией save из файла функс
+        saveFilePath = os.path.abspath(os.path.expanduser(saveFilePath))
+        # Save data to file using the save function from the funcs file
         funcs.save(saveFilePath, encrypted_data)
-        # просим пользователя сохранить ключ чтобы потом получить доступ к данным
+        # Ask the user to save the key for future access
         key_zip_file = input(
-            "\033[91m\033[1mВведите путь до директории (без /) для сохранения ключа шифрования:\033[0m "
+            "\033[91m\033[1mEnter the directory path to save the encryption key:\033[0m "
         )
-        password = getpass.getpass("\033[91m\033[1mВведите пароль для файла:\033[0m ")
-        # сохраняем ключ
+        key_zip_file = os.path.abspath(os.path.expanduser(key_zip_file))
+        password = getpass.getpass("\033[91m\033[1mEnter a password for the file:\033[0m ")
+        # Save the key
         zip.zipping(key_zip_file, key, password)
-        print("\033[91m\033[1mКлюч успешно сохранен.\033[0m")
-    # если расшифровать данные с файла
+        print("\033[91m\033[1mKey successfully saved.\033[0m")
+    # If decrypting data from a file
     elif ans == 3:
-        # получаем уже готовый ключ чтобы расшифровать данные
+        # Get the existing key to decrypt the data
         key_file = input(
-            "\033[91m\033[1mВведите путь до директории (без /) с ключом шифрования:\033[0m "
+            "\033[91m\033[1mEnter the directory path with the encryption key:\033[0m "
         )
-        password = getpass.getpass("\033[91m\033[1mВведите пароль для файла:\033[0m ")
-        # загружаем ключ
+        key_file = os.path.abspath(os.path.expanduser(key_file))
+        password = getpass.getpass("\033[91m\033[1mEnter a password for the file:\033[0m ")
+        # Load the key
         key = zip.unzipping(key_file, password)
-        # расшифровывем данные функцией decrypt из файла функс
+        # Decrypt the data using the decrypt function from the funcs file
         decrypted_data = funcs.decrypt(data, key)
-        # пользователь вводит куда расшифровать данные
+        # User inputs where to save the decrypted data
         saveFilePath = input(
-            "\033[91m\033[1mВведите путь до файла для сохранения текста:\033[0m "
+            "\033[91m\033[1mEnter the path to the file to save the text:\033[0m "
         )
-        # сохраняем все в файл
+        saveFilePath = os.path.abspath(os.path.expanduser(saveFilePath))
+        # Save everything to a file
         funcs.save(saveFilePath, decrypted_data)
 
-# если работаем с вводом
+# If working with user input
 if ans == 2 or ans == 4:
-    # если зашифровать введенные данные
+    # If encrypting user input data
     if ans == 2:
-        # получаем информацию
-        data = input("\033[91m\033[1mВведите текст:\033[0m ")
+        # Get user input
+        data = input("\033[91m\033[1mEnter the text:\033[0m ")
         data = data.encode("utf-8")
-        # создаем уникальный ключ шифрования
+        # Generate a unique encryption key
         key = Fernet.generate_key()
-        # шифруем
+        # Encrypt
         encrypted_data = funcs.encrypt(data, key)
-        # куда сохранять
+        # Specify where to save
         saveFilePath = input(
-            "\033[91m\033[1mВведите путь до файла для сохранения текста:\033[0m "
+            "\033[91m\033[1mEnter the path to the file to save the text:\033[0m "
         )
-        # сохраняем
+        saveFilePath = os.path.abspath(os.path.expanduser(saveFilePath))
+        # Save
         funcs.save(saveFilePath, encrypted_data)
-        # сохраняем ключ
+        # Save the key
         key_zip_file = input(
-            "\033[91m\033[1mВведите путь до директории (/) для сохранения ключа шифрования:\033[0m "
+            "\033[91m\033[1mEnter the directory path to save the encryption key:\033[0m "
         )
-        password = getpass.getpass("\033[91m\033[1mВведите пароль для файла:\033[0m ")
-        # сохраняем ключ
+        key_zip_file = os.path.abspath(os.path.expanduser(key_zip_file))
+        password = getpass.getpass("\033[91m\033[1mEnter a password for the file:\033[0m ")
+        # Save the key
         zip.zipping(key_zip_file, key, password)
-        print("\033[91m\033[1mКлюч успешно сохранен.\033[0m")
+        print("\033[91m\033[1mKey successfully saved.\033[0m")
 
-    # если расшифровать введенные данные
+    # If decrypting user input data
     elif ans == 4:
-        # читаем шифр
-        data = input("\033[91m\033[1mВведите текст:\033[0m ")
-        # получаем уже готовый ключ чтобы расшифровать данные
+        # Read the cipher
+        data = input("\033[91m\033[1mEnter the text:\033[0m ")
+        # Get the existing key to decrypt the data
         key_file = input(
-            "\033[91m\033[1mВведите путь до директории (без /) с ключом шифрования:\033[0m "
+            "\033[91m\033[1mEnter the directory path with the encryption key:\033[0m "
         )
-        password = getpass.getpass("\033[91m\033[1mВведите пароль для файла:\033[0m ")
-        # загружаем ключ
+        key_file = os.path.abspath(os.path.expanduser(key_file))
+        password = getpass.getpass("\033[91m\033[1mEnter a password for the file:\033[0m ")
+        # Load the key
         key = zip.unzipping(key_file, password)
-        # расшифровывем данные функцией decrypt из файла функс
+        # Decrypt the data using the decrypt function from the funcs file
         decrypted_data = funcs.decrypt(data, key)
-        # пользователь вводит куда расшифровать данные
+        # User inputs where to save the decrypted data
         saveFilePath = input(
-            "\033[91m\033[1mВведите путь до файла для сохранения текста:\033[0m "
+            "\033[91m\033[1mEnter the path to the file to save the text:\033[0m "
         )
-        # сохраняем все в файл
+        saveFilePath = os.path.abspath(os.path.expanduser(saveFilePath))
+        # Save everything to a file
         funcs.save(saveFilePath, decrypted_data)
 
 if ans == 5:

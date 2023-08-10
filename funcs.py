@@ -12,7 +12,7 @@ def file_read(filePath):
             data = file.read()
         return data
     except FileNotFoundError:
-        print("\n| ОШИБКА | Файл не найден!\n")
+        print("\n| ERROR | File not found!\n")
         time.sleep(1)
         restart_program()
 def encrypt(data, key):

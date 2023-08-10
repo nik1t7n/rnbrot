@@ -1,66 +1,25 @@
-**Project Name**: RnbRot Encryption Tool
-
-**Description**:
-The RnbRot Encryption Tool is a versatile command-line utility designed to provide a straightforward and secure solution for encrypting and decrypting data using the AES encryption algorithm. Whether you're safeguarding sensitive information or transmitting confidential files, this tool offers a user-friendly interface to fortify your data protection.
-
-**Features**:
-Perform Fernet encryption and decryption to bolster data security.
-Choice between file-based and interactive input modes for encryption/decryption.
-Password-protected storage of encryption keys within zip archives.
-Engaging and interactive command-line interface enriched with menu options.
-
-**Installation:**
-* Clone or download the project repository to your local machine.
-* Open a terminal and navigate to the project directory.
-* Install Dependencies:
-* Before utilizing the tool, ensure you have the required dependencies installed by executing the following command:
-
-_pip install -r requirements.txt_
-
-This command will automatically install the necessary libraries.
-
-**Usage:**
-Launch the encryption tool by running the main.py script.
-Follow the on-screen menu to select your desired action.
-Input data or file paths as guided by the tool.
-For encryption, the tool generates and securely stores an encryption key. For decryption, the key is retrieved from a password-protected zip archive.
-Encrypted or decrypted data is saved to the specified file path.
-Usage Examples:
-
-Encrypt data from a file:
-
-Choose option 1 from the menu.
-Provide the absolute path to the file.
-Specify the file path to save the encrypted text.
-Securely store the encryption key in a password-protected zip archive.
-Decrypt data from a file:
-
-Choose option 3 from the menu.
-Provide the absolute path to the encrypted file.
-Specify the path to the directory containing the key zip archive.
-Enter the password for the key zip archive.
-Specify the file path to save the decrypted text.
-Encrypt user input:
-
-Choose option 2 from the menu.
-Enter the text to encrypt.
-Specify the file path to save the encrypted text.
-Securely store the encryption key in a password-protected zip archive.
-Decrypt user input:
-
-Choose option 4 from the menu.
-Enter the encrypted text.
-Provide the path to the directory containing the key zip archive.
-Enter the password for the key zip archive.
-Specify the file path to save the decrypted text.
-Additional Notes:
-
-The tool employs Fernet encryption, a widely recognized and robust encryption algorithm.
-Maintain the confidentiality of your encryption keys and passwords.
-For comprehensive usage instructions, refer to the 5 point in menu.
-
-Authors:
-Nik1t7n
-
-License:
-This project is licensed under the MIT License. For detailed information, consult the LICENSE file.
+<h1>Encryption Tool README</h1>
+<h2>Introduction</h2>
+<p>The Encryption Tool is a command-line utility designed to provide a secure and user-friendly solution for encrypting and decrypting data using the Fernet encryption algorithm. Whether you need to protect sensitive information or secure file transmission, this tool offers a streamlined way to ensure data security.</p>
+<h2>Technologies</h2>
+<p>The Encryption Tool is built using the following technologies:</p>
+<ul>
+  <li><strong>Cryptography:</strong> Utilizes the Fernet encryption algorithm for robust data security.</li>
+  <li><strong>Rich:</strong> Enhances the command-line interface with interactive features.</li>
+  <li><strong>Pyminizip:</strong> Enables password-protected storage of encryption keys.</li>
+</ul>
+<h2>Launch</h2>
+<p>Follow these steps to launch and use the Encryption Tool:</p>
+<ol>
+  <li>Clone or download the project repository to your local machine.
+  <code>git clone https://github.com/Nik1t7n/rnbrot.git</code></li>
+  <li>Open a terminal and navigate to the project directory.
+  <code>cd path/to/project</code></li>
+  <li>Install dependencies by running <code>pip install -r requirements.txt</code>.</li>
+  <li>Run the <code>main.py</code> script to launch the tool.
+  <code>python3 main.py</code></li>
+  <li>Choose an action from the menu and provide the required input or file paths.</li>
+  <li>Encrypted or decrypted data will be saved to the specified file path.</li>
+</ol>
+<p><strong>Authors:</strong> Nik1t7n</p>
+<p><strong>License:</strong> This project is licensed under the MIT License. For more information, see the LICENSE file.</p>

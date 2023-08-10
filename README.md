@@ -1,4 +1,4 @@
-Project Name: RnbRot Encryption Tool
+*Project Name*: RnbRot Encryption Tool
 
 Description:
 The RnbRot Encryption Tool is a versatile command-line utility designed to provide a straightforward and secure solution for encrypting and decrypting data using the AES encryption algorithm. Whether you're safeguarding sensitive information or transmitting confidential files, this tool offers a user-friendly interface to fortify your data protection.
